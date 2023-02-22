@@ -1,0 +1,13 @@
+{
+  "name": "backend",
+  "module": "index.ts",
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch ./index.js",
+    "start": "node ./index.js"
+  },
+  "dependencies": {
+    "@fastify/cors": "^8.2.0",
+    "fastify": "^4.13.0"
+  }
+}

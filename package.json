@@ -1,0 +1,27 @@
+{
+  "name": "evolution-of-fullstack",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Fran Zekan",
+  "license": "MIT",
+  "scripts": {
+    "0-php": "cd ./0-og-fullstack/php && php -S localhost:8000",
+    "0-express": "cd ./0-og-fullstack/express && nr dev",
+    "1-rest": "cd ./1-separate-spa-fullstack/vite-rest && concurrently \"cd frontend && nr dev\" \"cd backend && nr dev\"",
+    "1-graphql": "cd ./1-separate-spa-fullstack/vite-graphql && concurrently \"cd frontend && nr dev\" \"cd backend && nr dev\"",
+    "db:migrate": "prisma migrate dev",
+    "db:rebuild": "prisma migrate reset",
+    "postinstall": "prisma generate"
+  },
+  "dependencies": {
+    "@prisma/client": "^4.10.1",
+    "prisma": "^4.10.1"
+  },
+  "prisma": {
+    "seed": "node ./prisma/seed.js"
+  },
+  "devDependencies": {
+    "@antfu/ni": "^0.20.0",
+    "concurrently": "^7.6.0"
+  }
+}
